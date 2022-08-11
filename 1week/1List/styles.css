@@ -1,0 +1,13 @@
+.product-list {
+    max-width: 400px;
+    padding: 20px;
+    border-collapse; collapse;
+
+}
+.product-list td { 
+    border-bottom: 1px solid #000000 ; 
+}
+
+.product-image {
+    width: 100px;
+}
