@@ -16,6 +16,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 img {
@@ -30,6 +31,7 @@ body {
 
 .btn {
     width: 80%;
+    text-align: center;
     max-width: 280px;
     font-size: 15px;
     font-weight: bold;
@@ -75,7 +77,7 @@ body {
   text-align: center;
 }
 
-.row {
+.row1 {
     padding: 70px 20px;
     text-align: center;
     font-family: 'GowunBatang-Regular';
@@ -90,6 +92,7 @@ body {
 
 .intro {
   width : 100% ;
+  text-align: center;
 }
 
 .calendar {
@@ -117,7 +120,7 @@ body {
 }
 
 .guestbook-row {
-  background : rgb(174, 207, 143);
+  background : rgb(188, 206, 172);
 }
 
 .guestbook input {
@@ -163,4 +166,34 @@ body {
 
 .guestbook-row table td.content {
   white-space : pre;
+}
+
+.pagination {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.pagination a {
+  color : var(--black);
+  padding : 5px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(white, white); /* Workaround for Chromium's selective color inversion */
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.root_daum_roughmap {
+  width : 100% !important;
+}
+
+.slick-slide {
+  height: auto !important;
 }
