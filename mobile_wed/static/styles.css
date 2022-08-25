@@ -197,3 +197,12 @@ body {
 .slick-slide {
   height: auto !important;
 }
+
+.mymodal-footer {
+  text-align : center;
+  padding : 10px;
+}
+
+.mymodal-footer button {
+  color : #fff;
+}

@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/styles.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
@@ -16,6 +17,12 @@
         $(document).ready(function () {
             $(".gallery").slick({
                 adaptiveHeight: true
+            });
+
+            $(".gallery-image").click(function () {
+                let src = $(this).attr('src');
+                $("#modal-image").attr('src', src);
+                $("#exampleModal").modal('show');
             });
         });
     </script>
@@ -161,71 +168,81 @@
                 {% endfor %}
             </div>
         </div>
-            <div class="row2">
-                <h4>마음 전하실 곳</h4>
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    신랑측 계좌번호
-                                </button>
-                            </h2>
-                        </div>
-
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                00은행 1111-2222-3333
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                    신부측 계좌번호
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                XX은행 2200-3300-4400
-                            </div>
-                        </div>
+        <div class="row2">
+            <h4>마음 전하실 곳</h4>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                신랑측 계좌번호
+                            </button>
+                        </h2>
                     </div>
 
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            00은행 1111-2222-3333
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row1">
-                <h4>찾아오시는 길</h4>
-                <div id="daumRoughmapContainer1660628355251" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-                <script charset="UTF-8" class="daum_roughmap_loader_script"
-                    src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                신부측 계좌번호
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            XX은행 2200-3300-4400
+                        </div>
+                    </div>
+                </div>
 
-                <!-- 3. 실행 스크립트 -->
-                <script charset="UTF-8">
-                    new daum.roughmap.Lander({
-                        "timestamp": "1660628355251",
-                        "key": "2bdpr",
-                        "mapWidth": "640",
-                        "mapHeight": "360"
-                    }).render();
-                </script>
             </div>
         </div>
-        <div class="row2 container">
-            <h4>갤러리</h4>
-            <div class="gallery">
-                <img src="/static/garo1.jpeg">
-                <img src="/static/garo2.jpg">
-                <img src="/static/garo3.jpg">
-                <img src="/static/garo4.jpg">
-                <img src="/static/sero1.jpg">
+        <div class="row1">
+            <h4>찾아오시는 길</h4>
+            <div id="daumRoughmapContainer1660628355251" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+            <script charset="UTF-8" class="daum_roughmap_loader_script"
+                src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                    "timestamp": "1660628355251",
+                    "key": "2bdpr",
+                    "mapWidth": "640",
+                    "mapHeight": "360"
+                }).render();
+            </script>
+        </div>
+    </div>
+    <div class="row2 container">
+        <h4>갤러리</h4>
+        <div class="gallery">
+            <img src="/static/garo1.jpeg" class="gallery-image">
+            <img src="/static/garo2.jpg" class="gallery-image">
+            <img src="/static/garo3.jpg" class="gallery-image">
+            <img src="/static/garo4.jpg" class="gallery-image">
+            <img src="/static/sero1.jpg" class="gallery-image">
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <img id="modal-image">
+                <div class="mymodal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
