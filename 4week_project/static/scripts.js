@@ -4,7 +4,7 @@ $(document).ready(function () {
         $.get("http://127.0.0.1:5000/dang?title=" + product_title)
             .then(function (result) {
                 $("#detailModalLabel").text(result.title);
-                $("#detailModalContent").text(result.content);
+                $("#detailModalContent").html(result.content);
                 $("#detailModal").modal('show');
             });
     });
