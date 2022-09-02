@@ -7,7 +7,7 @@
 .product-write {
     max-width: 400px;
     padding: 20px;
-    background-color: #aaa;
+    background-color: rgb(255, 255, 255);
 }
 
 .product-btn{
