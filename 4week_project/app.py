@@ -18,7 +18,7 @@ def dang() :
         'tltle' : product.get('title'),
         'content' : product.get('content')
     })
-    
+     
 @app.route('/writepage')
 def writepage():
     return render_template('write.html')
